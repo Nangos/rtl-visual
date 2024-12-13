@@ -42,10 +42,15 @@
   }
 
   .processing-element {
+    position: relative;
     width: 65px;
     height: 65px;
     border: 1px solid #000;
     margin: 5px;
+  }
+
+  .processing-element[data-active=true]{
+    border: 1px solid #4f4;
   }
 }
 
@@ -102,6 +107,10 @@
     border: 1px solid #000;
     margin: 5px;
   }
+
+  .register[data-activated=true]{
+    border: 1px solid #f44;
+  }
 }
 
 #W_mem {
@@ -120,6 +129,10 @@
     height: 20px;
     border: 1px solid #000;
     margin: 5px;
+  }
+
+  .register[data-activated=true]{
+    border: 1px solid #f44;
   }
 }
 
@@ -140,4 +153,15 @@
     border: 1px solid #000;
     margin: 5px;
   }
+
+  .register[data-activated=true]{
+    border: 1px solid #f44;
+  }
+}
+
+progress {
+  position: absolute;
+  top: 95%;
+  width: 65px;
+  height: 8px;
 }

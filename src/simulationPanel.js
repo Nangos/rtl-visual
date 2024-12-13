@@ -47,6 +47,9 @@ const SimulationPanel = () => {
       <div id="left-panel">
         <div className="controls">
           <h2>Systolic Array Simulator</h2>
+          <p>Output stationary, simplest implementation, no tiling support.</p>
+          <p>More functionalities coming soon.</p>
+          <h3>Design Parameters:</h3>
           <div className="input-group">
             <label htmlFor="arrayWidth">Array Width:</label>
             <input
@@ -67,6 +70,7 @@ const SimulationPanel = () => {
         { jsonData.length > 0 ?
           (
             <div className="cycle-controls">
+              <h3>Cycle Control:</h3>
               <div>
                 <button onClick={() => setCurrentCycle(0)}>Begin</button>
                 <button onClick={() => setCurrentCycle((prev) => Math.max(prev - 1, 0))}>Prev</button>

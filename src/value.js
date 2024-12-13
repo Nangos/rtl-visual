@@ -41,6 +41,7 @@ export class ConstantInteger extends Value {
   }
 
   toString() {
+    // return `${this.value}`;
     return `${this.value}`;
   }
 
@@ -73,7 +74,8 @@ export class SymbolicMatrixElement extends Value {
   }
 
   toString() {
-    return `${this.matrixName}[${this.i}][${this.j}]`;
+    // return `${this.matrixName}[${this.i}][${this.j}]`;
+    return `${this.matrixName}_{${this.i}${this.j}}`;
   }
 }
 
@@ -100,6 +102,7 @@ export class SymbolicPartialSum extends Value {
   }
 
   toString() {
-    return `Σ_{k=0}^{${this.N - 1}} ${this.leftMatrixName}[${this.i}][k] * ${this.rightMatrixName}[k][${this.j}]`;
+    // return `Σ_{k=0}^{${this.N - 1}} ${this.leftMatrixName}[${this.i}][k] * ${this.rightMatrixName}[k][${this.j}]`;
+    return `\\sum_{0}^{${this.N - 1}} ${this.leftMatrixName}_{${this.i}i} ${this.rightMatrixName}_{i${this.j}}`;
   }
 }

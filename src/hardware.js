@@ -2,7 +2,7 @@
  * Defines the hardware to be simulated and visualized.
  */
 
-import { ConstantInteger, isConstantZero, Value, SymbolicMatrixElement, SymbolicPartialSum } from './value.js';
+import { ConstantInteger, isConstantZero, SymbolicMatrixElement, SymbolicPartialSum } from './value.js';
 
 /**
  * A processing element (PE) in the systolic array.
@@ -468,11 +468,13 @@ class OutputStationaryTopLevel {
         Y_mem: this.submodules.Y_mem.cells.map(cell => cell.toString()),
         X_delay: this.submodules.X_delay.registers.map(row => row.map(cell => cell.toString())),
         W_delay: this.submodules.W_delay.registers.map(row => row.map(cell => cell.toString())),
-        systolicArray: {
-          X: this.submodules.systolicArray.array.map(row => row.map(pe => pe.regs.X.toString())),
-          W: this.submodules.systolicArray.array.map(row => row.map(pe => pe.regs.W.toString())),
-          Acc: this.submodules.systolicArray.array.map(row => row.map(pe => pe.regs.Acc.toString())),
-        },
+        systolicArray: this.submodules.systolicArray.array.map(row => row.map(pe => {
+          return {
+            X: pe.regs.X.toString(),
+            W: pe.regs.W.toString(),
+            Acc: pe.regs.Acc.toString(),
+          };
+        })),
         controls: {
           cycleCount: this.submodules.controller.cycleCount,
         },
@@ -489,9 +491,9 @@ class OutputStationaryTopLevel {
    */
   simulate(numCycles) {
     if (numCycles === null) {
-      numCycles = (2 * this.arrayWidth - 1) + this.streamLength + this.arrayWidth + 3;  // 3 more cycles just in case
+      numCycles = 3 * this.arrayWidth + this.streamLength;
     }
-    let states = {};
+    let states = new Array(numCycles);
     for (let i = 0; i < numCycles; i++) {
       states[i] = this.dump_state();
       this.update();

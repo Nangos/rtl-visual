@@ -1,0 +1,143 @@
+.top-level {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 20%;
+}
+
+.controller {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #000;
+  
+  .cycle-count {
+    margin: 5px;
+    font-weight: bold;
+  }
+
+  .control-wire {
+    margin: 5px;
+  }
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  margin: 40px;
+}
+
+.register {
+  font-size: 10px;
+}
+
+.systolic-array {
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .processing-element {
+    width: 65px;
+    height: 65px;
+    border: 1px solid #000;
+    margin: 5px;
+  }
+}
+
+#X_delay { 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .register {
+    width: 20px;
+    height: 65px;
+    border: 1px solid #000;
+    margin: 5px;
+  }
+}
+
+#W_delay {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .register {
+    width: 65px;
+    height: 20px;
+    border: 1px solid #000;
+    margin: 5px;
+  }
+}
+
+#X_mem {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  border: 1px solid #000;
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .register {
+    width: 20px;
+    height: 65px;
+    border: 1px solid #000;
+    margin: 5px;
+  }
+}
+
+#W_mem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border: 1px solid #000;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .register {
+    width: 65px;
+    height: 20px;
+    border: 1px solid #000;
+    margin: 5px;
+  }
+}
+
+#Y_mem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border: 1px solid #000;
+
+  .row {
+    display: flex;
+    flex-direction: row;  
+  }
+
+  .register {
+    width: 65px;
+    height: 20px;
+    border: 1px solid #000;
+    margin: 5px;
+  }
+}
